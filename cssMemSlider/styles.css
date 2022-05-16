@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto";
+    background-color: #dee3fb;
+    
+}
+
+header {
+  margin: 0 auto;
+  width: 90%;
+  /* border: 1px solid black; */
+
+}
+
+h1{
+    text-align: center;
+}
+
+main{
+    margin: 0 auto;
+    width: 90%;
+    /* border: 1px solid green; */
+}
+
+.all{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} 
+
+.slider-container{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.slider{
+   transition: transform 0.5s ease-in-out;
+   display: flex;
+   /* gap: 1.5rem; */
+   width: calc(100% * 5);
+   height: 60vh;
+   padding: 2rem 0;
+}
+.first{
+    background-image: url("images/5.jpeg");
+}
+.second{
+    background-image: url("images/m.png");
+}
+.third{
+    background-image: url("images/kk.jpg");
+}
+.fourth{
+    background-image: url("images/l.jpeg");
+}
+.fifth{
+    background-image: url("images/k.jpeg");
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(0 0 0.2rem #4284c1);
+    
+}
+
+#s1:target ~ .slider{ transform: translateX(0%); -webkit-transform: translateX(0%); }
+  #s2:target ~ .slider-container .slider{ transform: translateX(-20%); -webkit-transform: translateX(-20%); }
+  #s3:target ~ .slider-container .slider{ transform: translateX(-40%); -webkit-transform: translateX(-40%); }
+  #s4:target ~ .slider-container .slider{ transform: translateX(-60%); -webkit-transform: translateX(-60%); }
+  #s5:target ~ .slider-container .slider{ transform: translateX(-80%); -webkit-transform: translateX(-80%); }
+
+  #s1:target ~ .bottom-part .text .first-text { transform: translateX(0%); -webkit-transform: translateX(0%); visibility: visible;}
+  #s2:target ~ .bottom-part .text .second-text { transform: translateX(-100%); -webkit-transform: translateX(-100%); visibility: visible; transition: 0.1s ease-in-out;}
+  #s3:target ~ .bottom-part .text .third-text { transform: translateX(-200%); -webkit-transform: translateX(-200%); visibility: visible; transition: 0.1s ease-in-out;}
+  #s4:target ~ .bottom-part .text .fourth-text { transform: translateX(-300%); -webkit-transform: translateX(-300%); visibility: visible; transition: 0.1s ease-in-out;}
+  #s5:target ~ .bottom-part .text .fifth-text { transform: translateX(-400%); -webkit-transform: translateX(-400%); visibility: visible; transition: 0.1s ease-in-out;}
+
+
+  .text {
+    height: fit-content;
+    overflow: hidden;
+    /* width: calc(100% * 5); */
+    display: flex;
+    flex-direction: row;
+}
+
+.txt {
+    /* opacity: 0.5; */
+    /* font-family: "Roboto"; */
+    font-size: 1rem;
+    color: #0B0E1B;
+    /* transition: 0.7s ease-in-out; */
+    /* height: 5.5rem; */
+    visibility: hidden;
+    /* margin-bottom: 10px; */
+    width: 100%;
+}
+
+
+
+.bottom-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+
+p {
+    width: 100%;
+    height: fit-content;
+    overflow-wrap: break-word;
+    padding-left: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.switch-btn{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    padding-right: 1.2rem;
+}
+
+.btn {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    /* border: 3px solid #0B0E1B; */
+    background-color: #495176;
+    transition: 0.2s ease-in-out;
+}
+
+.switch-btn .btn:hover {
+    border: 3px solid rgb(143, 166, 217);
+    background-color: rgb(251, 247, 247);
+}
+.switch-btn .btn:active {
+    transform: scale(0.1s);
+    background-color: rgb(16, 68, 179);
+}
+
+#s1:target ~ .bottom-part .switch-btn .btn-1 {
+    background-color: rgb(177, 199, 247);
+}
+
+#s2:target ~ .bottom-part .switch-btn .btn-2 {
+    background-color: rgb(177, 199, 247);
+}
+
+#s3:target ~ .bottom-part .switch-btn .btn-3 {
+    background-color: rgb(177, 199, 247);
+}
+
+#s4:target ~ .bottom-part .switch-btn .btn-4 {
+    background-color: rgb(177, 199, 247);
+}
+
+#s5:target ~ .bottom-part .switch-btn .btn-5 {
+    background-color: rgb(177, 199, 247);
+}
+
+footer{
+    display: none;
+}
+
+@media (max-width: 700px){
+
+    .bottom-part{
+        align-items: center;
+        
+    }
+
+    .btn{
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+
+    .txt{
+       font-size: 0.6rem;
+    }
+}
